@@ -1,0 +1,7 @@
+target
+pom.xml.*
+
+.project
+.classpath
+.settings
+
