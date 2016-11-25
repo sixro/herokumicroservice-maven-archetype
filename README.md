@@ -23,7 +23,14 @@ TODO
 
 ## <a name="usage"/>Usage
 
-TODO
+Clone the project.  
+Run a `mvn clean install`.  
+Go to the parent directory where you want to create your new microservice project.  
+Type:
+```
+    mvn archetype:generate -DarchetypeGroupId=com.github.sixro -DarchetypeArtifactId=herokumicroservice-maven-archetype -DarchetypeVersion=<version>
+```
+  where <version> is the version you cloned from Github.
 
 
 ## <a name="where_to_get_help"/>Where to get help
