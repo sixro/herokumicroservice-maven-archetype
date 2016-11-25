@@ -17,6 +17,7 @@ A Maven Archetype to start developing a __microservice__ and deploying it to __H
 
 ## <a name="description"/>Description
 
+This archetype enables you to develop a microservice and deploy it on Heroku.  
 TODO
 
 
