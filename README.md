@@ -3,6 +3,7 @@ herokumicroservice-maven-archetype
 
 A Maven Archetype to start developing a __microservice__ and deploying it to __Heroku__ as fast as you can :)
 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Sixro&url=https://github.com/sixro/herokumicroservice-maven-archetype&title=herokumicroservice-maven-archetype&language=&tags=github&category=software)
 
 ## Summary
 
