@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
-	>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
@@ -11,9 +9,9 @@
 
 	<!--
 	<name>A Microservice</name>
-	<description>A Microservice</description>
+	<description>A Microservice</description> 
 	<url>YOUR-APP-URL</url>
-	  -->
+	-->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +19,8 @@
 
 		<java.version>1.8</java.version>
 
+		<jersey.version>2.24.1</jersey.version>
+		
 		<junit.version>4.12</junit.version>
 		<jmock.version>2.8.1</jmock.version>
 
@@ -32,13 +32,25 @@
 
 	<dependencies>
 
-		<!-- ==  Testing  ===================================== -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+
+		<!-- == Testing ===================================== -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>
 		<dependency>
 			<groupId>org.jmock</groupId>
 			<artifactId>jmock-junit4</artifactId>
@@ -50,7 +62,7 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>	
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
@@ -62,28 +74,28 @@
 			</plugin>
 
 			<plugin>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-war-plugin</artifactId>
-                                <version>${maven-war-plugin.version}</version>
-                        </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin.version}</version>
+			</plugin>
 
-                        <plugin>
-                                <groupId>org.eclipse.jetty</groupId>
-                                <artifactId>jetty-maven-plugin</artifactId>
-                                <version>${jetty-maven-plugin.version}</version>
-                        </plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty-maven-plugin.version}</version>
+			</plugin>
 
-                        <plugin>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-release-plugin</artifactId>
-                                <version>${maven-release-plugin.version}</version>
-                                <configuration>
-                                        <tagNameFormat>v@{project.version}</tagNameFormat>
-                                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                                        <useReleaseProfile>false</useReleaseProfile>
-                                        <arguments>-DskipITs</arguments>
-                                </configuration>
-                        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven-release-plugin.version}</version>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<useReleaseProfile>false</useReleaseProfile>
+					<arguments>-DskipITs</arguments>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
